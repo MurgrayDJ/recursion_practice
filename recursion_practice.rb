@@ -12,5 +12,30 @@ def fact(n)
   end
 end
 
-puts "The factorial of 4 is: #{fact(4)}"
-puts "The factorial of 10 is: #{fact(10)}"
+# puts "The factorial of 4 is: #{fact(4)}"
+# puts "The factorial of 10 is: #{fact(10)}"
+
+
+# Define a recursive function that returns true if a string is a palindrome and false otherwise.
+def palindrome(a_string)
+  if a_string.length == 0 || a_string.length == 1
+    true
+  elsif a_string[0] == a_string[-1] 
+    palindrome(a_string[1..-2])
+  else
+    false
+  end
+end
+
+def palindrome_helper(a_string)
+  if palindrome(a_string)
+    puts "#{a_string} is a palindrome"
+  else
+    puts "#{a_string} is NOT a palindrome"
+  end
+end
+
+# palindrome_helper("racecar")
+# palindrome_helper("a")
+# palindrome_helper("banana")
+# palindrome_helper("011110")
