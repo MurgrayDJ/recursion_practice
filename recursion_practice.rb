@@ -39,3 +39,28 @@ end
 # palindrome_helper("a")
 # palindrome_helper("banana")
 # palindrome_helper("011110")
+
+
+
+#Define a recursive function that takes an argument n and prints "n bottles of beer on the wall", 
+#"(n-1) bottles of beer on the wall", ..., "no more bottles of beer on the wall".
+
+def beer_song(n)
+  if n == 0
+    puts "No more bottles of beer on the wall."
+    return 0
+  elsif n == 1
+    puts "1 more bottle of beer on the wall, 1 more bottle of beer,"
+    puts "take it down, pass it around, No more bottles of beer on the wall."
+    puts
+    return beer_song(n-1)
+  else
+    puts "#{n} bottles of beer on the wall, #{n} bottles of beer,"
+    puts "take 1 down, pass it around, #{n-1} bottles of beer on the wall."
+    puts
+    return beer_song(n-1)
+  end
+end
+
+#beer_song(5)
+#beer_song(10)
