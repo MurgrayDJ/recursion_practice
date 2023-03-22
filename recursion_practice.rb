@@ -44,7 +44,6 @@ end
 
 #Define a recursive function that takes an argument n and prints "n bottles of beer on the wall", 
 #"(n-1) bottles of beer on the wall", ..., "no more bottles of beer on the wall".
-
 def beer_song(n)
   if n == 0
     puts "No more bottles of beer on the wall."
@@ -78,5 +77,24 @@ def fibonacci(n)
   end
 end
 
-puts "6th number in the fibonacci sequence: #{fibonacci(6)}"
-puts "10th number in the fibonacci sequence: #{fibonacci(10)}"
+# puts "6th number in the fibonacci sequence: #{fibonacci(6)}"
+# puts "10th number in the fibonacci sequence: #{fibonacci(10)}"
+
+
+
+
+#Define a recursive function that flattens an array. 
+#The method should convert [[1, 2], [3, 4]] to [1, 2, 3, 4] and [[1, [8, 9]], [3, 4]] to [1, 8, 9, 3, 4].
+def flatten(arr, result=[])
+  arr.each do |element|
+    if element.kind_of?(Array)
+      flatten(element, result)
+    else
+      result << element
+    end
+  end
+  result
+end
+
+p "[[1, 2], [3, 4]] flattened is #{flatten([[1, 2], [3, 4]])}"
+p "[[1, [8, 9]], [3, 4]] flattened is #{flatten([[1, [8, 9]], [3, 4]])}"
