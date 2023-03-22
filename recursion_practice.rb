@@ -64,3 +64,19 @@ end
 
 #beer_song(5)
 #beer_song(10)
+
+
+#Define a recursive function that takes an argument n and returns the fibonacci value of that position. 
+#The fibonacci sequence is 0, 1, 1, 2, 3, 5, 8, 13, 21... So fib(5) should return 5 and fib(6) should return 8.
+def fibonacci(n)
+  if n == 0
+    0
+  elsif n == 1
+    1
+  else
+    fibonacci(n-1) + fibonacci(n-2)
+  end
+end
+
+puts "6th number in the fibonacci sequence: #{fibonacci(6)}"
+puts "10th number in the fibonacci sequence: #{fibonacci(10)}"
