@@ -27,10 +27,30 @@ def fibs(num)
   result
 end
 
-puts "fibs(0) is #{fibs(0)}"
-puts "fibs(1) is #{fibs(1)}"
-puts "fibs(2) is #{fibs(2)}"
-puts "fibs(3) is #{fibs(3)}"
-puts "fibs(8) is #{fibs(8)}"
+# puts "fibs(0) is #{fibs(0)}"
+# puts "fibs(1) is #{fibs(1)}"
+# puts "fibs(2) is #{fibs(2)}"
+# puts "fibs(3) is #{fibs(3)}"
+# puts "fibs(8) is #{fibs(8)}"
 
 #Part 2 - Recursion
+def fibs_rec(num, result=[])
+  if num == 0
+    result << 0
+  elsif num == 1
+    result << 1
+  elsif num == 2
+    result.unshift(1)
+    result.unshift(0)
+  else
+    prev_result = fibs_rec(num-1, result)
+    result << prev_result[-1] + prev_result[-2]
+  end
+  result
+end
+
+puts "fibs_rec(0) is #{fibs_rec(0)}"
+puts "fibs_rec(1) is #{fibs_rec(1)}"
+puts "fibs_rec(2) is #{fibs_rec(2)}"
+puts "fibs_rec(3) is #{fibs_rec(3)}"
+puts "fibs_rec(8) is #{fibs_rec(8)}"
